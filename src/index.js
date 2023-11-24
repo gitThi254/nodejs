@@ -12,4 +12,6 @@ mongoose
       console.log(`server running at ${port}`);
     });
   })
-  .catch((err) => [console.log(`DB disconnected`)]);
+  .catch((err) => {
+    console.log(`DB disconnected`);
+  });
