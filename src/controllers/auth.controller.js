@@ -17,7 +17,11 @@ exports.login = asyncErrorhandler(async (req, res, next) => {
     return next(new CustomeError("Incorrect email or password", 401));
 
   const token = await createAccessToken({ id: user._id });
-  res.cookie("token", token);
+  res.cookie("token", token, {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  });
   res.json({
     data: {
       username: user.username,
