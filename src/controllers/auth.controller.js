@@ -32,6 +32,9 @@ exports.login = asyncErrorhandler(async (req, res, next) => {
 
 exports.logout = asyncErrorhandler(async (req, res, next) => {
   res.cookie("token", "", {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
     expires: new Date(0),
   });
   res.sendStatus(200);
