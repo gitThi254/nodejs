@@ -7,6 +7,7 @@ const globalErrorHandler = require("./controllers/err.controller");
 const authRoutes = require("./routes/auth.route");
 const taskRoutes = require("./routes/tasks.route");
 const app = express();
+require("dotenv").config();
 
 app.use(express.json());
 
