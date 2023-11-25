@@ -18,7 +18,7 @@ app.use(
     credentials: true,
   })
 );
-
+console.log("hello");
 app.use("/api/v1/users", authRoutes);
 app.use("/api/v1/tasks", taskRoutes);
 
